@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Simone Kresevic</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">Simone Kresevic</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="research.html" class="nav-link">My journey</a></li>
+                <li><a href="https://scholar.google.com/citations?user=6Oiq5h4AAAAJ&hl=it&oi=ao"  class="nav-link" target="_blank" rel="noopener noreferrer">Publications</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="page-section about">
+        <div class="container">
+            <h1 class="page-title">About Me </h1>
+            
+            <div class="about-content">
+                <div class="education-compact">
+                    <p>
+                        I am a Ph.D. Researcher in Biomedical Engineering on Artificial Intelligence in Medicine at BioingTS lab at the University of Trieste, 
+                        specializing in trustworthy AI systems for healthcare applications.
+                    <br>
+                        My research focuses on developing responsible AI systems that clinicians can trust—bridging algorithmic 
+                        innovation with rigorous safety evaluation and human-centered design. I'm appasionate in Computational Pathology. I have established 
+                        systematic frameworks for safe LLM deployment in high-stakes clinical settings through two years of research 
+                        at Yale University.
+                    <br>
+                        I am committed to building AI systems that work equitably for all patients while advancing interdisciplinary 
+                        research at the intersection of algorithmic fairness, clinical validity, and human-AI collaboration.
+                </div>
+                    
+                    
+                    <!-- 
+                    <h2 class="subsection-title">Education</h2>
+                        <div class="education-item">
+                        <div class="edu-header">
+                            <h3>Ph.D. in Industrial & Information Engineering</h3>
+                            <span class="edu-date">Dec. 2022 - Dec. 2026</span>
+                        </div>
+                        <p class="edu-institution">University of Trieste, Italy</p>
+                        <p class="edu-detail">Specialization: Bioengineering and Artificial Intelligence 
+                        </br> PNRR/Ateneo fellowship (co-funded with Prodigys s.r.l.)
+                        </br> <strong>Supervisors:</strong> Prof. A. Accardo, Prof. M. Ajcevic</p>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="edu-header">
+                            <h3>M.Sc. in Biomedical Engineering</h3>
+                            <span class="edu-date">Oct. 2020 - Oct. 2022</span>
+                        </div>
+                        <p class="edu-institution">(110/110 Summa Cum Laude), University of Trieste, Italy</p>
+                        <p class="edu-detail"> <strong>Thesis:</strong> Convolutional neural networks for diagnosis and prediction of liver disease from ultrasound imaging
+                        </br> <strong>Supervisor:</strong> Prof. A. Accardo</p>
+                    </div> -->
+                    <h3 class="edu-compact-title">Education</h3>
+                    <ul class="education-list">
+                        <li class="edu-list-item">
+                            <strong>Ph.D. in Industrial & Information Engineering</strong> — University of Trieste, Italy (2022-2025)
+                        </li>
+                        <li class="edu-list-item">
+                            <strong>M.Sc. in Biomedical Engineering (Summa Cum Laude)</strong> — University of Trieste, Italy (2020-2022) 
+                        </li>
+                        <li class="edu-list-item">
+                            <strong>B.Sc. in Biomedical Engineering</strong> — University of Trieste, Italy (2016-2020) 
+                        </li>
+                    </ul>
+                </div>
+
+                <h3 class="edu-compact-title beyond-research-title">Beyond Research</h3>
+                    
+  
+                    
+                    <div class="extra-activities">
+                        <div class="activity-card">
+                            <h5>🏔️ Alpinism</h5>
+                            <br>
+                            <p>I've heard "mountains chose me" a lot of times, and despite could not be considered original, I feel it fits perfectly me. 
+                            <br>In the mountains, I've learned that being strong only matters when it helps you support someone weaker. I've learned to trust my life to a companion's rope and knot, where it doesn't matter whatever. Up there, formalities stay in the valley (...they're too heavy for a pack reduced to essentials).
+                            The mountains taught me the beautiful paradox of being brave enough to surrender to something greater than myself. I'm not challenging the peaks (...the success ratio is unknown), I'm challenging my own limits and my fears. 
+                        </div>
+                        
+                        <div class="activity-card">
+                            <h5>🚣‍♂️ Rowing</h5>
+                            <p><br>Director of Rowing Section at Società Canottieri Timavo (2025-present). 
+                                <br> Coach in the years between 2019 and 2023, while in the past I've tried to be a competitive rower.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Popup -->
+    <div id="contactPopup" class="popup-overlay">
+        <div class="popup-content">
+            <button class="popup-close" id="closePopup">&times;</button>
+            <h3>Contact Information</h3>
+            <div class="contact-details">
+                <div class="contact-item-popup">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--epfl-red)">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    <div>
+                        <p class="contact-label">Email</p>
+                        <a class="contact-value"><span>simone.kresevic@phd.units.it</span></a>
+                    </div>
+                </div>
+                <div class="contact-item-popup">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--epfl-red)">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <div>
+                        <p class="contact-label">Work Address</p>
+                        <p class="contact-value">BioingTS lab at University of Trieste</p>
+                        <p class="contact-value">Via Alfonso Valerio, C3 Building</p>
+                        <p class="contact-value">Trieste, Italy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Simone Kresevic. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="about-galleries.js"></script>
+</body>
+</html>

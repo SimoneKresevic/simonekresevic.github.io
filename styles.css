@@ -151,6 +151,11 @@ a:hover {
     transition: width var(--transition-normal);
 }
 
+.nav-link:active {
+    background-color: var(--neutral-lightest); 
+    transform: scale(0.98);
+}
+
 .nav-link:hover,
 .nav-link.active {
     color: var(--favCol-red);
@@ -1197,8 +1202,11 @@ section {
     }
 
     .nav-link {
-        padding: 1rem;
-        width: 100%;
+    display: block;
+    padding: 1.25rem 2rem;
+    width: 100%;
+    font-size: 1.1rem; 
+    transition: all 0.2s ease;
     }
 
     .hamburger {

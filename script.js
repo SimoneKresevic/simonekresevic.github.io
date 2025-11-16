@@ -3,16 +3,13 @@
 // ===========================
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize galaxy canvas
     initGalaxyCanvas();
     
-    // Elements
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
     const navbar = document.querySelector('.navbar');
     
-    // Mobile menu toggle
     if (hamburger) {
         hamburger.addEventListener('click', function() {
             hamburger.classList.toggle('active');
@@ -21,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Close mobile menu when clicking on a link
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             hamburger.classList.remove('active');
@@ -30,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Close mobile menu when clicking outside
     document.addEventListener('click', function(event) {
         const isClickInsideNav = navMenu.contains(event.target);
         const isClickOnHamburger = hamburger.contains(event.target);
@@ -42,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Navbar scroll effect
     let lastScrollTop = 0;
     window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -56,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScrollTop = scrollTop;
     });
     
-    // Active navigation link on scroll
     const sections = document.querySelectorAll('section[id]');
     
     function updateActiveLink() {
@@ -79,21 +72,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     window.addEventListener('scroll', updateActiveLink);
-    updateActiveLink(); // Call once on page load
+    updateActiveLink(); 
     
-    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             
-            // Don't prevent default for just "#" links
             if (href === '#') return;
             
             e.preventDefault();
             const target = document.querySelector(href);
             
             if (target) {
-                const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                const offsetTop = target.offsetTop - 80; 
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -102,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Intersection Observer for fade-in animations
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -117,7 +107,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
     
-    // Elements to animate on scroll
     const animateElements = document.querySelectorAll(
         '.education-item, .experience-item, .project-card, .skill-category, .publication-item, .award-card'
     );
@@ -129,23 +118,20 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(element);
     });
     
-    // Year update in footer
     const yearElement = document.querySelector('.footer p');
     if (yearElement) {
         const currentYear = new Date().getFullYear();
         yearElement.innerHTML = yearElement.innerHTML.replace('2025', currentYear);
     }
     
-    // Console message (optional - can be removed)
     console.log('%c👋 Welcome to my website!', 'color: #ff0000; font-size: 20px; font-weight: bold;');
-    console.log('%cBuilt with EPFL color palette', 'color: #666; font-size: 14px;');
+    console.log('%cBuilt with favCol color palette', 'color: #666; font-size: 14px;');
 });
 
 // ===========================
 // Scroll to top functionality (optional)
 // ===========================
 
-// Create scroll to top button
 function createScrollToTopButton() {
     const button = document.createElement('button');
     button.innerHTML = '↑';
@@ -158,7 +144,7 @@ function createScrollToTopButton() {
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        background-color: var(--epfl-red);
+        background-color: var(--favCol-red);
         color: white;
         border: none;
         font-size: 24px;
@@ -172,7 +158,6 @@ function createScrollToTopButton() {
     
     document.body.appendChild(button);
     
-    // Show/hide button on scroll
     window.addEventListener('scroll', function() {
         if (window.pageYOffset > 300) {
             button.style.opacity = '1';
@@ -183,7 +168,6 @@ function createScrollToTopButton() {
         }
     });
     
-    // Scroll to top on click
     button.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
@@ -191,7 +175,6 @@ function createScrollToTopButton() {
         });
     });
     
-    // Hover effect
     button.addEventListener('mouseenter', function() {
         this.style.transform = 'translateY(-3px)';
     });
@@ -201,14 +184,9 @@ function createScrollToTopButton() {
     });
 }
 
-// Initialize scroll to top button
 createScrollToTopButton();
 
-// ===========================
-// Performance optimization
-// ===========================
 
-// Debounce function for scroll events
 function debounce(func, wait = 10, immediate = true) {
     let timeout;
     return function() {
@@ -225,25 +203,21 @@ function debounce(func, wait = 10, immediate = true) {
     };
 }
 
-// Contact Popup Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const contactPopup = document.getElementById('contactPopup');
     const closePopup = document.getElementById('closePopup');
     
-    // Apri popup quando si clicca "Contact Me"
     document.querySelector('a[href="contact.html"]').addEventListener('click', function(e) {
         e.preventDefault();
         contactPopup.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Previene lo scroll del body
+        document.body.style.overflow = 'hidden'; 
     });
     
-    // Chiudi popup
     closePopup.addEventListener('click', function() {
         contactPopup.classList.remove('active');
         document.body.style.overflow = '';
     });
     
-    // Chiudi popup cliccando fuori dal contenuto
     contactPopup.addEventListener('click', function(e) {
         if (e.target === contactPopup) {
             contactPopup.classList.remove('active');
@@ -251,7 +225,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Chiudi popup con ESC
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && contactPopup.classList.contains('active')) {
             contactPopup.classList.remove('active');
@@ -259,78 +232,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
-const polaroids = [
-    { img: "https://picsum.photos/500/500?random=1", caption: "Yale University 2024 🔬" },
-    { img: "https://picsum.photos/500/500?random=2", caption: "EMBEC Conference 🎤" },
-    { img: "https://picsum.photos/500/500?random=3", caption: "Biomedical Lab 🧬" },
-    { img: "https://picsum.photos/500/500?random=4", caption: "EU TalentON 2024 🏆" },
-    { img: "https://picsum.photos/500/500?random=5", caption: "Research Project 🧪" },
-    { img: "https://picsum.photos/500/500?random=6", caption: "Academic Event 🎓" },
-    { img: "https://picsum.photos/500/500?random=7", caption: "Laboratory Work 🔍" },
-    { img: "https://picsum.photos/500/500?random=8", caption: "Conference Talk 🎤" },
-    { img: "https://picsum.photos/500/500?random=9", caption: "Team Collaboration 👥" },
-    { img: "https://picsum.photos/500/500?random=10", caption: "Award Ceremony 🏅" },
-    { img: "https://picsum.photos/500/500?random=11", caption: "Data Analysis 📊" },
-    { img: "https://picsum.photos/500/500?random=12", caption: "Field Research 🌍" }
-];
-
-const corkboard = document.getElementById("corkboard");
-
-polaroids.forEach((polaroid, index) => {
-    // Rotazione più contenuta (-8° a +8°)
-    const rotation = (Math.random() * 16 - 8).toFixed(2) + "deg";
-    
-    // Layout fisso per 12 foto: 4 colonne × 3 righe (desktop) / 2 colonne × 6 righe (mobile)
-    const positions = calculateGridPosition(index);
-    
-    const polaroidPin = document.createElement("div");
-    polaroidPin.className = "polaroid-pin";
-    polaroidPin.style.setProperty("--rotation", rotation);
-    polaroidPin.style.setProperty("--x", positions.x);
-    polaroidPin.style.setProperty("--y", positions.y);
-    polaroidPin.style.setProperty("--index", index);
-    polaroidPin.style.zIndex = index + 1;
-
-    polaroidPin.innerHTML = `
-        <div class="pin red-pin"></div>
-        <div class="polaroid-frame">
-            <div class="polaroid-image">
-                <img src="${polaroid.img}" alt="${polaroid.caption}" loading="lazy">
-            </div>
-            <div class="polaroid-caption">${polaroid.caption}</div>
-        </div>
-    `;
-
-    corkboard.appendChild(polaroidPin);
-});
-
-// Funzione per calcolare posizioni in griglia fissa
-function calculateGridPosition(index) {
-    // Desktop: 4 colonne × 3 righe
-    // Mobile: 2 colonne × 6 righe (gestito via CSS)
-    const desktopCols = 4;
-    const desktopRows = 3;
-    
-    const col = index % desktopCols;
-    const row = Math.floor(index / desktopCols);
-    
-    // Calcola posizioni con margini adatti
-    const horizontalSpacing = 80 / (desktopCols - 1); // 0% a 100%
-    const verticalSpacing = 65 / (desktopRows - 1);   // 0% a 100%
-    
-    const baseX = 0 + (col * horizontalSpacing);
-    const baseY = 0 + (row * verticalSpacing);
-    
-    // Piccola variazione random per look naturale
-    const randomOffsetX = (Math.random() * 8 - 4);
-    const randomOffsetY = (Math.random() * 8 - 4);
-    
-    return { 
-        x: (baseX + randomOffsetX) + "%", 
-        y: (baseY + randomOffsetY) + "%" 
-    };
-}
 
 // ===========================
 // Dynamic Galaxy Canvas
@@ -340,7 +241,6 @@ function initGalaxyCanvas() {
     const hero = document.querySelector('.hero');
     if (!hero) return;
     
-    // Create canvas element
     const canvas = document.createElement('canvas');
     canvas.style.position = 'absolute';
     canvas.style.top = '50%';
@@ -356,20 +256,17 @@ function initGalaxyCanvas() {
     let animationId;
     let mouse = { x: null, y: null, radius: 150 };
     
-    // Track mouse position relative to canvas
     hero.addEventListener('mousemove', function(event) {
         const rect = canvas.getBoundingClientRect();
         mouse.x = event.clientX - rect.left;
         mouse.y = event.clientY - rect.top;
     });
     
-    // Reset mouse position when leaving hero section
     hero.addEventListener('mouseleave', function() {
         mouse.x = null;
         mouse.y = null;
     });
     
-    // Set canvas size
     function resizeCanvas() {
         canvas.width = canvas.offsetWidth;
         canvas.height = canvas.offsetHeight;
@@ -377,7 +274,6 @@ function initGalaxyCanvas() {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
     
-    // Particle class
     class Particle {
         constructor() {
             this.reset();

@@ -1,7 +1,3 @@
-// ===========================
-// About Page Photo Galleries
-// ===========================
-
 const mountainPhotos = [
     'https://picsum.photos/500/400?random=50',
     'https://picsum.photos/500/400?random=51',
@@ -19,25 +15,19 @@ const rowingPhotos = [
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Add click handlers to activity cards
     const activityCards = document.querySelectorAll('.activity-card');
     
     activityCards.forEach((card, index) => {
-        // Add a visual indicator that cards are clickable
         card.style.cursor = 'pointer';
         
-        // Add click event
         card.addEventListener('click', function() {
             if (index === 0) {
-                // Mountain card
                 openActivityGallery('Alpinism', mountainPhotos);
             } else if (index === 1) {
-                // Rowing card
                 openActivityGallery('Rowing', rowingPhotos);
             }
         });
         
-        // Add hover effect hint
         const hint = document.createElement('p');
         hint.className = 'gallery-hint';
         hint.textContent = 'Click to view photos';
@@ -55,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function openActivityGallery(title, photos) {
-    // Create popup
     const popup = document.createElement('div');
     popup.className = 'popup-overlay active';
     popup.innerHTML = `
@@ -68,7 +57,6 @@ function openActivityGallery(title, photos) {
     
     document.body.appendChild(popup);
     
-    // Add photos to gallery
     const gallery = popup.querySelector('#activityGalleryGrid');
     photos.forEach((photo, index) => {
         const img = document.createElement('img');
@@ -79,7 +67,6 @@ function openActivityGallery(title, photos) {
         gallery.appendChild(img);
     });
     
-    // Close handlers
     popup.querySelector('.popup-close').addEventListener('click', () => {
         document.body.removeChild(popup);
     });

@@ -177,7 +177,6 @@ const eventsData = {
         detail: 'June 2024 — Portorož, Slovenia',
         description: 'Award-winning paper: "Optimizing electroporation responses in genetically engineered HEK cells: an ensemble learning approach"',
         photos: [
-            // Aggiungi qui i link alle foto
         ]
     },
     'research-assistant': {
@@ -245,7 +244,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const eventPopup = document.getElementById('eventPopup');
     const projectPopup = document.getElementById('projectPopup');
     
-    // Event items click handlers
     const eventItems = document.querySelectorAll('.timeline-item');
     eventItems.forEach(item => {
         item.addEventListener('click', function() {
@@ -254,7 +252,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Project cards click handlers
     const projectCards = document.querySelectorAll('.project-card-modern');
     projectCards.forEach(card => {
         card.addEventListener('click', function() {
@@ -263,14 +260,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Close popup handlers
     document.querySelectorAll('.popup-close').forEach(closeBtn => {
         closeBtn.addEventListener('click', function() {
             this.closest('.popup-overlay').classList.remove('active');
         });
     });
     
-    // Close on overlay click
     [eventPopup, projectPopup].forEach(popup => {
         if (popup) {
             popup.addEventListener('click', function(e) {
@@ -281,7 +276,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Close on Escape key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             if (eventPopup) eventPopup.classList.remove('active');
@@ -299,7 +293,6 @@ function openEventPopup(eventId) {
     document.getElementById('eventDetail').textContent = event.detail;
     document.getElementById('eventDescription').innerHTML = event.description;
     
-    // Create photo gallery
     const gallery = document.getElementById('eventGallery');
     gallery.innerHTML = '';
     if (event.photos && event.photos.length > 0) {
@@ -325,7 +318,6 @@ function openProjectPopup(projectId) {
     document.getElementById('projectInstitution').textContent = project.institution;
     document.getElementById('projectDescription').innerHTML = project.description;
     
-    // Create photo gallery
     const gallery = document.getElementById('projectGallery');
     gallery.innerHTML = '';
     if (project.photos && project.photos.length > 0) {
@@ -342,7 +334,6 @@ function openProjectPopup(projectId) {
     document.getElementById('projectPopup').classList.add('active');
 }
 
-// Lightbox for full-size images
 function openLightbox(photos, startIndex) {
     let currentIndex = startIndex;
     

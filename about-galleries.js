@@ -1,17 +1,9 @@
 const mountainPhotos = [
-    'https://picsum.photos/500/400?random=50',
-    'https://picsum.photos/500/400?random=51',
-    'https://picsum.photos/500/400?random=52',
-    'https://picsum.photos/500/400?random=53',
-    'https://picsum.photos/500/400?random=54',
-    'https://picsum.photos/500/400?random=55'
+    'Video 3.mp4'
 ];
 
 const rowingPhotos = [
-    'https://picsum.photos/500/400?random=60',
-    'https://picsum.photos/500/400?random=61',
-    'https://picsum.photos/500/400?random=62',
-    'https://picsum.photos/500/400?random=63'
+    'Video 3.mp4'
 ];
 
 document.addEventListener('DOMContentLoaded', function() {

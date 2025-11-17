@@ -114,9 +114,7 @@ const eventsData = {
         detail: '2 February 2024',
         description: 'Poster presentation on LLM-based clinical decision support systems in hepatology',
         photos: [
-            'https://picsum.photos/400/300?random=15',
-            'https://picsum.photos/400/300?random=16',
-            'https://picsum.photos/400/300?random=17'
+            // ...
         ]
     },
 
